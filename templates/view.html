@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <meta property="og:title" content={{ page_title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="{{ link_prefix }}/{{ code }}.png" />
+    <meta property="og:url" content="{{ link_prefix }}/{{ code }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="{{ site_name }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="{{ link_prefix }}/{{ code }}.png" />
+    <title>{{ page_title }}</title>
+{% endblock %}
+
+{% block content %}
+    <header>
+        <h1>{{ code }}</h1>
+        <p>{{ name }}</p>
+    </header>
+    <div id="picture-view">
+        <a href="/{{ code }}.png"><img id="picture-viewimg" src="/{{ code }}.png"></img></a>
+        <p>{{ description }}</p>
+    </div>
+    <div>
+        <span>Photo by </span><a class="link" href="{{ source }}">{{ author }}</a>
+    </div>
+    <div>
+        <a class="link" href="/">View other http foxes</a>
+    </div>
+{% endblock %}

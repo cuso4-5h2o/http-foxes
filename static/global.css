@@ -1,0 +1,137 @@
+body {
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #fafafa;
+    font-size: 1rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+
+pre {
+    padding: 12px;
+    background: white;
+    font: 14px / 16px Consolas, monospace, serif;
+    color: black;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    overflow: auto;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+.usage-item {
+    margin-left: -12px;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+#content {
+    margin: 2rem auto;
+    width: 95%;
+    max-width: 64rem;
+    text-align: left;
+}
+
+#picture-view {
+    text-align: center;
+    height: 80%;
+}
+
+#picture-viewimg {
+    max-height: 600px;
+}
+
+.link {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+#picture-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.picture-li {
+    display: -webkit-flex;
+    display: flex;
+    padding: .5rem;
+    width: 100%;
+}
+
+@media (min-width: 640px){
+    .picture-li {
+        width: 50%;
+    }
+}
+
+@media (min-width: 880px){
+    .picture-li {
+        width: 33.3333%;
+    }
+}
+
+.picture-box {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    overflow: hidden;
+    color: white;
+    background-color: yellowgreen;
+    border-radius: .25rem;
+    box-shadow: 0 20px 40px -14px rgb(0 0 0 / 25%);
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.picture-box a {
+    text-decoration: none;
+    color: white;
+}
+
+.picture-image {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    -webkit-filter: contrast(70%);
+    filter: contrast(70%);
+    overflow: hidden;
+}
+
+.picture-text {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    padding: 1rem 1rem 0;
+}
+
+.picture-code {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 24px;
+}
+
+.picture-image:before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+}

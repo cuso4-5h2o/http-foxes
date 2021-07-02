@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>🦊 {{ page_title }}</title>
+{% endblock %}
+
+{% block content %}
+    <header>
+        <h1>🦊 {{ page_title }}</h1>
+        <img style="cursor:not-allowed" src="https://img.shields.io/badge/javascript-0%25-blue" title="Javascript: 0%"></img>
+        <a href="https://stackoverflow.com/a/40115909" target="_blank"><img src="https://img.shields.io/badge/framework-vanilla--css-green" title="Framework: vanilla-css"></img></a>
+        <a href="https://github.com/cuso4-5h2o/http-foxes" target="_blank"><img src="https://img.shields.io/github/license/cuso4-5h2o/http-foxes" title="License"></img></a>
+    </header>
+    <div id="usage">
+        <h2>Usage</h2>
+        <pre>$ curl https://f.cus.moe/{http_status_code}</pre>
+        <ul>
+            <li class="usage-item">Add <i>.png</i> at the end to get a picture without the title.</li>
+            <li class="usage-item">Add <i>.jpg</i> at the end to get a picture with the title.</li>
+            <li class="usage-item">Add <i>.ini</i> at the end to get machine-readable information.</li>
+            <li class="usage-item"><del>Add something else at the end to get a real 404 error.</del></li>
+        </ul>
+    </div>
+    <div id="gallery">
+        <h2>Gallery</h2>
+        <ul id="picture-container">
+        {% for picture in pictures %}
+            <li class="picture-li">
+                <div class="picture-box">
+                    <a href="/{{ picture.code }}">
+                        <div class="picture-image" style="background-image:url(/{{ picture.code }}.jpg)"></div>
+                        <div class="picture-text">
+                            <div class="picture-code">{{ picture.code }}</div>
+                            <p>{{ picture.name }}</p>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
